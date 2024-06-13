@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 4</title>
+</head>
+<body>
+    <script>
+        // Запросить у пользователя любое число больше 5, в случае правильного ответа выдать окошко с поздравлением, в случае неправильного ответа вывести повторное окно с вопросом (помните, что пользователь может нажать "отмена", помните о типах данных)
+        function askNumber() {
+            let userInput = prompt("Введите любое число больше 5:");
+            
+            if (userInput === null || userInput.trim() === "") {
+                askNumber();
+            } else {
+                let number = parseFloat(userInput);
+
+                if (!isNaN(number) && number > 5) {
+                    alert("Поздравляем! Вы ввели число больше 5!");
+                } else {
+                    askNumber();
+                }
+            }
+        }
+
+        askNumber();
+    </script>
+</body>
+</html>
